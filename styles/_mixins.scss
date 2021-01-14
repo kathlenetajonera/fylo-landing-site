@@ -1,0 +1,13 @@
+@mixin flexbox($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+$mediaBreakpoints: ("mobile": "375px", "tablet": "768px", "desktop": "1024px");
+
+@mixin mediaQuery($size) {
+    @media (min-width: map-get($mediaBreakpoints, $size)) {
+        @content;
+    }
+}

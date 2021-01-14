@@ -1,0 +1,106 @@
+.footer {
+    background-color: $veryDarkBlue;
+    color: $lightGrayishBlue;
+    padding: 4rem 3rem;
+
+    .footer-logo {
+        display: block;
+        margin-bottom: 1rem;
+        
+        img {
+            filter: brightness(0) invert(1);
+
+            @include mediaQuery(tablet) {
+                width: 120px;
+            }
+        }
+    }
+
+    .grid-four-col {
+        .contact {
+            .detail {
+                @include flexbox(flex-start);
+                margin: 1rem 0;
+
+                img {
+                    width: 20px;
+                    margin-right: 1rem;
+                }
+
+                @include mediaQuery(desktop){
+                    margin: 0 0 1rem;
+                }
+            }
+        }
+
+        .menu {
+            .footer-links {
+                li {
+                    margin-top: 1rem;
+
+                    a {
+                        color: $lightGrayishBlue;
+
+                        &:hover {
+                            color: $brightBlue;
+                        }
+                    }
+
+                    @include mediaQuery(desktop) {
+                        margin: 0 0 1rem;
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            @include flexbox(center);
+            margin-top: 3rem;
+
+            .icon {
+                width: 28px;
+                height: 28px;
+                border: 1px solid $lightGrayishBlue;
+                border-radius: 50%;
+                
+                &:not(:last-child) {
+                    margin-right: .5rem;
+                }
+                
+                @include flexbox(center);
+
+                i {
+                    color: $lightGrayishBlue;
+                }
+
+                &:hover {
+                    border: 1px solid $brightBlue;
+
+                    i {
+                        color: $brightBlue;
+                    }
+                }
+            }
+
+            @include mediaQuery(desktop) {
+                margin-top: 0;
+                align-items: flex-start;
+            }
+        }
+
+        @include mediaQuery(tablet) {
+            .grid-two-col {
+                align-items: flex-start;
+            }
+        }
+
+        @include mediaQuery(desktop) {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+
+            .span-2 {
+                grid-column: span 2;
+            }
+        }
+    }
+}

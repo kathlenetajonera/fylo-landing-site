@@ -1,0 +1,80 @@
+.hero {
+    padding: 2rem;
+
+    @include mediaQuery(desktop) {
+        padding: 3rem 4rem 6rem;
+    }
+    
+    .navbar {
+        @include flexbox(space-between);
+
+        .logo {
+            flex: 1;
+            @include flexbox(flex-start);
+
+            img {
+                width: Min(133px, 60%);
+            }
+        }    
+
+        .nav-links {
+            @include flexbox(center);
+
+            li {
+                a {
+                    color: $veryDarkBlue;
+                    padding: 0 1rem;
+                    font-size: .8rem;
+                    font-family: $main-font;
+
+                    &:hover {
+                        color: $brightBlue;
+                    }
+
+                    @include mediaQuery(desktop) {
+                        font-size: 1rem;
+                        padding: 0 3rem;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .grid-two-col {
+        margin: 5rem 0;
+
+        .text {
+            p {
+                color: $desaturatedBlue;
+            }
+
+            .email-form {
+                .field {
+                    position: relative;
+
+                    p {
+                        display: none;
+                        margin: 0;
+                        font-size: .8rem;
+                        position: absolute;
+                        bottom: 0;
+                        transform: translateY(110%);
+
+                        &.error {
+                            display: block;
+                            color: #e990ac;
+                        }
+                    }
+                }
+
+                button {
+                    box-shadow: 4px 4px 10px 0 #e0e2e4;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.banner {
+    background-color: $desaturatedBlue;
+    padding: 4rem 2rem;
+
+    @include mediaQuery(desktop) {
+        padding: 6rem 4rem;
+    }
+
+    .grid-two-col {
+        grid-gap: 0;
+
+        @include mediaQuery(tablet) {
+            grid-gap: 1rem;
+        }
+        
+        .text {
+            order: 0;
+            color: $lightGrayishBlue;
+        }
+
+        .form {
+            .email-form {
+                .field {
+                    position: relative;
+
+                    @include mediaQuery(desktop) {
+                        margin-bottom: 1rem;
+
+                        &.error {
+                            margin-bottom: 2rem;
+                        }
+                    }
+
+                    p {
+                        display: none;
+                        margin: 0;
+                        font-size: .8rem;
+                        position: absolute;
+                        bottom: 0;
+                        transform: translateY(110%);
+
+                        &.error {
+                            display: block;
+                            color: $lightGrayishBlue;
+                        }
+                    }
+                }
+            }
+
+            @include mediaQuery(tablet) {
+                .email-form {
+                    margin-left: auto;
+                    flex-direction: column;
+    
+                    // input {
+                    //     margin: 0 0 1rem;
+                    // }
+    
+                    button {
+                        width: 50%;
+                        margin-right: auto;
+                        box-shadow: 0 0 5px 0 #3d4f9b;
+                    }
+                }
+            }
+        }
+    }
+}
